@@ -1,8 +1,9 @@
 /**
  * Backbone localStorage Adapter
- * Version 1.1.16
+ * Version 1.1.17
  *
- * https://github.com/jeromegn/Backbone.localStorage
+ * Original: https://github.com/jeromegn/Backbone.localStorage
+ * Fork: https://github.com/danielbayerlein/Backbone.localStorage
  */
 (function (root, factory) {
   if (typeof exports === 'object' && typeof require === 'function') {
@@ -56,7 +57,7 @@ function result(object, property) {
 // with a meaningful name, like the name you'd give a table.
 // window.Store is deprectated, use Backbone.LocalStorage instead
 Backbone.LocalStorage = window.Store = function(name, serializer) {
-  if( !this.localStorage ) {
+  if( !this.localStorage() ) {
     throw "Backbone.localStorage: Environment does not support localStorage."
   }
   this.name = name;
@@ -134,7 +135,11 @@ extend(Backbone.LocalStorage.prototype, {
   },
 
   localStorage: function() {
-    return localStorage;
+    try {
+      return localStorage;
+    } catch (e) {
+      return null;
+    }
   },
 
   // Clear localStorage for specific collection.
