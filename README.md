@@ -1,5 +1,7 @@
 # Backbone localStorage Adapter v2.0.0
 
+[![Build Status](https://travis-ci.org/danielbayerlein/Backbone.localStorage.svg?branch=master)](https://travis-ci.org/danielbayerlein/Backbone.localStorage)
+
 Quite simply a localStorage adapter for Backbone.
 It's a drop-in replacement for Backbone.Sync() to handle saving to a localStorage database.
 
