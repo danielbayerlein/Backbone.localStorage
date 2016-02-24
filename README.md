@@ -1,10 +1,7 @@
-# Backbone localStorage Adapter v1.1.16
+# Backbone localStorage Adapter v2.0.0
 
-[![Build Status](https://secure.travis-ci.org/jeromegn/Backbone.localStorage.png?branch=master)](http://travis-ci.org/jeromegn/Backbone.localStorage)
-
-Quite simply a localStorage adapter for Backbone. It's a drop-in replacement for Backbone.Sync() to handle saving to a localStorage database.
-
-[![Gittip](http://badgr.co/gittip/jeromegn.png)](https://www.gittip.com/jeromegn/)
+Quite simply a localStorage adapter for Backbone.
+It's a drop-in replacement for Backbone.Sync() to handle saving to a localStorage database.
 
 ## Usage
 
@@ -19,11 +16,8 @@ Create your collections like so:
 
 ```javascript
 window.SomeCollection = Backbone.Collection.extend({
-  
   localStorage: new Backbone.LocalStorage("SomeCollection"), // Unique name within your app.
-  
   // ... everything else is normal.
-  
 });
 ```
 
@@ -43,7 +37,8 @@ Include [RequireJS](http://requirejs.org):
 <script type="text/javascript" src="lib/require.js"></script>
 ```
 
-RequireJS config: 
+RequireJS config:
+
 ```javascript
 require.config({
     paths: {
@@ -56,70 +51,40 @@ require.config({
 ```
 
 Define your collection as a module:
+
 ```javascript
 define("SomeCollection", ["localstorage"], function() {
     var SomeCollection = Backbone.Collection.extend({
         localStorage: new Backbone.LocalStorage("SomeCollection") // Unique name within your app.
     });
-  
+
     return SomeCollection;
 });
 ```
 
 Require your collection:
+
 ```javascript
 require(["SomeCollection"], function(SomeCollection) {
   // ready to use SomeCollection
 });
 ```
 
-### CommonJS
+## Acknowledgments
 
-If you're using [browserify](https://github.com/substack/node-browserify).
-
-Install using `npm install backbone.localstorage`, and require the module.
-
-```javascript
-Backbone.LocalStorage = require("backbone.localstorage");
-```
+* [Mark Woodall](https://github.com/llad): initial tests (now refactored);
+* [Martin Häcker](https://github.com/dwt): many fixes and the test isolation.
 
 ## Contributing
 
-You'll need node and to `npm install` before being able to run the minification script.
-
-1. Fork;
-2. Write code, with tests;
-3. `make test` or `open spec/runner.html`;
-4. Create a pull request.
-
-Have fun!
-
-## Acknowledgments
-
-- [Mark Woodall](https://github.com/llad): initial tests (now refactored);
-- [Martin Häcker](https://github.com/dwt): many fixes and the test isolation.
+1. Fork it
+2. Create your feature branch (`git checkout -b my-new-feature`)
+3. Commit your changes (`git commit -am 'Add some feature'`)
+4. Push to the branch (`git push origin my-new-feature`)
+5. Create new [Pull Request](../../pull/new/master)
 
 ## License
 
-Licensed under MIT license
+Copyright (c) 2016 Daniel Bayerlein. See [LICENSE](./LICENSE) for details.
 
-Copyright (c) 2010 Jerome Gravel-Niquet
-
-Permission is hereby granted, free of charge, to any person obtaining
-a copy of this software and associated documentation files (the
-"Software"), to deal in the Software without restriction, including
-without limitation the rights to use, copy, modify, merge, publish,
-distribute, sublicense, and/or sell copies of the Software, and to
-permit persons to whom the Software is furnished to do so, subject to
-the following conditions:
-
-The above copyright notice and this permission notice shall be
-included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
-NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
-LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
-OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
-WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+Copyright (c) 2010-2015 Jerome Gravel-Niquet.
