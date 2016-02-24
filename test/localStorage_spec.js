@@ -1,5 +1,3 @@
-
-
 describe("Backbone.localStorage", function(){
 
   var attributes = {
@@ -352,28 +350,6 @@ describe("Backbone.localStorage", function(){
 
     });
 
-    describe("local storage not supported", function() {
-      var localStorageFunction;
-
-      before(function() {
-        localStorageFunction = Backbone.LocalStorage.prototype.localStorage;
-
-        Backbone.LocalStorage.prototype.localStorage = function () {
-          return undefined;
-        };
-      });
-
-      it("should throw a specific error when localStorage is not defined", function() {
-        assert.throws(function() {
-          new Backbone.LocalStorage("testNoLocalStorageSupport");
-        }, "Backbone.localStorage: Environment does not support localStorage.");
-      });
-
-      after(function() {
-        Backbone.LocalStorage.prototype.localStorage = localStorageFunction;
-      });
-    });
-
   });
 
 });
@@ -409,9 +385,9 @@ describe("AMD", function(){
 
   require.config({
     paths: {
-      jquery: "support/jquery",
-      underscore: "support/underscore",
-      backbone: "support/backbone",
+      jquery: "../node_modules/jquery/dist/jquery",
+      underscore: "../node_modules/underscore/underscore",
+      backbone: "../node_modules/backbone/backbone",
       localstorage: "../backbone.localStorage"
     }
   });
