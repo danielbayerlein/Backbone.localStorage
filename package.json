@@ -21,7 +21,7 @@
   },
   "scripts": {
     "lint": "eslint backbone.localStorage.js",
-    "minify": "uglifyjs -o backbone.localStorage-min.js backbone.localStorage.js",
+    "minify": "uglifyjs --comments -o backbone.localStorage-min.js backbone.localStorage.js",
     "test": "mocha-phantomjs ./test/runner.html"
   },
   "repository": {

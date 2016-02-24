@@ -2,9 +2,10 @@
 
 /**
  * Backbone localStorage Adapter
- * Version 2.0.0
  *
- * https://github.com/danielbayerlein/Backbone.localStorage
+ * @version 2.0.0
+ * @see https://github.com/danielbayerlein/Backbone.localStorage
+ * @license https://github.com/danielbayerlein/Backbone.localStorage#license
  */
 (function (root, factory) {
   if (typeof exports === 'object' && typeof require === 'function') {
