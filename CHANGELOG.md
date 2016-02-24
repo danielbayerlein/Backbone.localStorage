@@ -2,10 +2,12 @@
 
 ## Fork
 
-### 1.1.17 (2016-02-22)
+### 2.0.0 (2016-02-23)
 
 * Bugfix for IE (when localStorage is not supported)
-* Update dependencies for test environment
+* Spring Cleaning
+* Update Dependencies
+* ESLint
 
 ## Original
 
