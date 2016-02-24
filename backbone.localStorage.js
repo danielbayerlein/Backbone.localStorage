@@ -77,7 +77,7 @@
 
   // Our Store is represented by a single JS object in *localStorage*. Create it
   // with a meaningful name, like the name you'd give a table.
-  // window.Store is deprectated, use Backbone.LocalStorage instead
+  // window.Store is deprecated, use Backbone.LocalStorage instead
   window.Store = function store(name, serializer) {
     var storage;
     if (this.localStorage()) {
@@ -120,7 +120,7 @@
       return this.find(obj);
     },
 
-    // Update a model by replacing its copy in `this.data`.
+    // Update a model by replacing it's copy in `this.data`.
     update: function update(model) {
       var obj = model;
       var modelId;
