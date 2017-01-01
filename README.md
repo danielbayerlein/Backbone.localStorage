@@ -87,6 +87,6 @@ require(["SomeCollection"], function(SomeCollection) {
 
 ## License
 
-Copyright (c) 2016 Daniel Bayerlein. See [LICENSE](./LICENSE) for details.
+Copyright (c) 2016-2017 Daniel Bayerlein. See [LICENSE](./LICENSE) for details.
 
 Copyright (c) 2010-2015 Jerome Gravel-Niquet.
